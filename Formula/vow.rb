@@ -1,8 +1,8 @@
 class Vow < Formula
   desc "Programming language for machine authors, with contracts proved by Z3"
   homepage "https://vow.kranzky.com"
-  url "https://github.com/kranzky/vow/archive/refs/tags/v0.1.0.tar.gz"
-  sha256 "9069fa1b63324d8400a60681cf597279182fe4b14c3e8d1ad1a8b0c6e4332eb3"
+  url "https://github.com/kranzky/vow/archive/refs/tags/v0.2.0.tar.gz"
+  sha256 "907690cf336db665f8ab0cf6da024ed034b5161677660b20c6686499c7503757"
   license "Unlicense"
   head "https://github.com/kranzky/vow.git", branch: "main"
 
