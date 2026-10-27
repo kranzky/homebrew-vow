@@ -1,8 +1,8 @@
 class Vow < Formula
   desc "Programming language for machine authors, with contracts proved by Z3"
   homepage "https://vow.kranzky.com"
-  url "https://github.com/kranzky/vow/archive/refs/tags/v0.6.0.tar.gz"
-  sha256 "f4f061f5ad97c19280cafc87b9dc6b5aad2b7abf5dca39635d440b51330c5607"
+  url "https://github.com/kranzky/vow/archive/refs/tags/v0.7.0.tar.gz"
+  sha256 "0d5a6c2dba83ad13e1d667d9b323d12a5af6ba9abe7e645164c03ab9dd9c8e56"
   license "Unlicense"
   head "https://github.com/kranzky/vow.git", branch: "main"
 
@@ -11,7 +11,9 @@ class Vow < Formula
   def install
     # Builds the compiler from its C seed; no other toolchain is needed.
     system "make"
-    bin.install "build/vowc"
+    # The language server is written in Vow: the new vowc verifies and builds it.
+    system "make", "build/vow-lsp"
+    bin.install "build/vowc", "build/vow-lsp"
   end
 
   test do
